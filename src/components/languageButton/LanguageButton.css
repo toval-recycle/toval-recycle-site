@@ -1,0 +1,14 @@
+.animation:hover {
+  top: 0%;
+  animation: move 300ms;
+  border: 1px solid red;
+}
+
+@keyframes move {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 500%;
+  }
+}

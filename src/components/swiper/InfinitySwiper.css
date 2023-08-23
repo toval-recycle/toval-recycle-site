@@ -1,0 +1,21 @@
+.infinity-swiper {
+  width: 100%;
+  height: 100%;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgb(0, 0, 0) 10% 90%,
+    transparent 100%
+  );
+}
+
+.infinity-swiper .swiper-wrapper {
+  transition-timing-function: linear;
+}
+
+.infinity-swiper .swiper-slide {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  user-select: none;
+}
