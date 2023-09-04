@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
-import ScrollLink from '../ScrollLink';
+import ScrollLink from '../../components/ScrollLink';
 import { cn } from '../../utils/cn';
 
 interface DrawerMenuProps {

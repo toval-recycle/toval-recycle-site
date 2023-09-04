@@ -2,12 +2,12 @@ import { useMediaQuery } from 'react-responsive';
 import { cn } from '../../utils/cn';
 import { sectionsID, siteOffset } from '../../utils/projectData';
 import DrawerMenu from './Drawer';
-import ScrollLink from '../ScrollLink';
+import ScrollLink from '../../components/ScrollLink';
 import useApplyLinkStyle from './hooks/useApplyLinkStyle';
 import useApplyNavBarStyle from './hooks/useApplyNavBarStyle';
 import { useTranslation } from 'react-i18next';
-import LanguageButton from '../languageButton/LanguageButton';
-import LazyImage from '../LazyImage';
+import LanguageButton from '../../components/languageButton/LanguageButton';
+import LazyImage from '../../components/LazyImage';
 
 function NavBar() {
   const { t } = useTranslation();
@@ -55,6 +55,7 @@ function NavBar() {
       <div className="flex items-center gap-4">
         <LanguageButton />
         <LazyImage
+          alt="site-image"
           src="/logo.svg"
           lowSrc="/logo-low.png"
           className="aspect-auto object-cover w-12 sm:w-20 h-full"

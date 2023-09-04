@@ -59,9 +59,10 @@ function Home() {
         </div>
         <div>
           <LazyImage
+            alt="main-image"
             src={MAINIMAGE}
             lowSrc={LOW_MAINIMAGE}
-            className="object-contain w-30rem lg:w-[72rem]"
+            className="object-contain w-[72rem]"
           />
         </div>
       </div>

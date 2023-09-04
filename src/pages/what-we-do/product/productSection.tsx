@@ -24,6 +24,7 @@ function ProductSection({
     >
       <div>
         <LazyImage
+          alt="product-image"
           src={original}
           lowSrc={low}
           className="aspect-square rounded-3xl w-[50vw] max-w-xl lg:w-[80vw]  object-cover"

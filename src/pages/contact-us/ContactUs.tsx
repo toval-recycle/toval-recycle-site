@@ -141,6 +141,7 @@ function ContactUs() {
         <div className="flex justify-center items-center lg:items-start lg:flex-col gap-4 md:gap-10">
           <div>
             <LazyImage
+              alt="contact-image"
               src="/contact-us/main-image.svg"
               lowSrc="/contact-us/main-image-low.png"
               className="aspect-square object-contain w-64 lg:w-[25rem] xl:w-[29rem]"

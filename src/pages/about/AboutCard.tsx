@@ -16,6 +16,7 @@ function AboutCard({
     <div className="flex h-auto flex-col gap-5 border-main text-center md:text-start border rounded-xl p-8  items-center">
       <div>
         <LazyImage
+          alt="about-image"
           src={original}
           lowSrc={low}
           className=" aspect-square object-contain h-52 lg:h-72"

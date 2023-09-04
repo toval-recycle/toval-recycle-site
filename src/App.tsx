@@ -1,13 +1,13 @@
 import React from 'react';
-import Home from './pages-components/homePage/Home';
-import NavBar from './components/navBar/NavBar';
-import WhatWeDo from './pages-components/what-we-do/WhatWeDo';
-import Contact from './pages-components/contact-us/ContactUs';
-import Cards from './pages-components/about/AboutCards';
-import StatisticsNumbers from './pages-components/about/StatisticsNumbers';
-import Clients from './pages-components/what-we-do/Clients';
-import Footer from './pages-components/footer/Footer';
-import OurProducts from './pages-components/what-we-do/product/OurProducts';
+import Home from './pages/homePage/Home';
+import NavBar from './layout/navBar/NavBar';
+import WhatWeDo from './pages/what-we-do/WhatWeDo';
+import Contact from './pages/contact-us/ContactUs';
+import Cards from './pages/about/AboutCards';
+import StatisticsNumbers from './pages/about/StatisticsNumbers';
+import Clients from './pages/what-we-do/Clients';
+import Footer from './pages/footer/Footer';
+import OurProducts from './pages/what-we-do/product/OurProducts';
 import { sectionsID } from './utils/projectData';
 import useChangeAppLanguage from './hooks/useChangeAppTitle';
 
