@@ -22,11 +22,11 @@ function ProductSection({
         { 'lg:flex-row-reverse': reverse }
       )}
     >
-      <div className="w-[50vw] max-w-xl lg:w-[80vw]  object-cover">
+      <div>
         <LazyImage
           src={original}
           lowSrc={low}
-          className="aspect-square rounded-3xl"
+          className="aspect-square rounded-3xl w-[50vw] max-w-xl lg:w-[80vw]  object-cover"
         />
       </div>
 

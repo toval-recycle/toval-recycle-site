@@ -57,11 +57,11 @@ function Home() {
             </ScrollLink>
           </div>
         </div>
-        <div className="w-30rem lg:w-[72rem]">
+        <div>
           <LazyImage
             src={MAINIMAGE}
             lowSrc={LOW_MAINIMAGE}
-            className="object-contain"
+            className="object-contain w-30rem lg:w-[72rem]"
           />
         </div>
       </div>

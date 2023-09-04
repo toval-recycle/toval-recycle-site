@@ -54,13 +54,11 @@ function NavBar() {
       )}
       <div className="flex items-center gap-4">
         <LanguageButton />
-        <div className="w-12 sm:w-20">
-          <LazyImage
-            src="/logo.svg"
-            lowSrc="/logo-low.png"
-            className="aspect-auto "
-          />
-        </div>
+        <LazyImage
+          src="/logo.svg"
+          lowSrc="/logo-low.png"
+          className="aspect-auto object-cover w-12 sm:w-20 h-full"
+        />
       </div>
     </nav>
   );

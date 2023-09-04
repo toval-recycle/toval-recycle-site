@@ -14,8 +14,6 @@ function LazyImage({ src, lowSrc, className, ...props }: LazyImage) {
   return (
     <LazyLoadImage
       className={cn(className)}
-      width="100%"
-      height="100%"
       src={src}
       placeholderSrc={lowSrc}
       {...props}
