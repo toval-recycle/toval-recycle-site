@@ -8,7 +8,7 @@ import ParagraphHeader from '../../components/ParagraphHeader';
 import { useFormik } from 'formik';
 import { useTranslation } from 'react-i18next';
 import LazyImage from '../../components/LazyImage';
-
+import { motion } from 'framer-motion';
 const SERVICE_ID = '';
 
 function ContactUs() {
@@ -68,7 +68,12 @@ function ContactUs() {
     },
   });
   return (
-    <div>
+    <motion.div
+      initial={{ y: 50, opacity: 0 }}
+      transition={{ duration: 1 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+    >
       <div className="mb-10">
         <ParagraphHeader>{TITLE}</ParagraphHeader>
       </div>
@@ -161,7 +166,7 @@ function ContactUs() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

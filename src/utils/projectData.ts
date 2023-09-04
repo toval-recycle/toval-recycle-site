@@ -15,3 +15,10 @@ export const sectionsData = [
   { nameToDisplay: 'Services', sectionId: sectionsID.whatWeAreDoing },
   { nameToDisplay: 'Get in touch', sectionId: sectionsID.getInTouch },
 ];
+export const siteBreakPoints = {
+  sm: '640px',
+  md: '768px',
+  lg: '1024px',
+  xl: '1280px',
+  '2xl': '1536px',
+};

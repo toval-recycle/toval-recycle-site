@@ -2,27 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import ParagraphHeader from '../../../components/ParagraphHeader';
 import ProductSection from './productSection';
-
-const ProductsArray = [
-  {
-    imagePath: '/about-us/about-us-image.png',
-    title: 'We strive to protect nature for future generations.',
-    paragraph:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisseullamcorper enim vel fringilla scelerisque. Morbi fermentum, metuseget aliquet laoreet, dolor arcu congue mauris, eleifend fermentumligula ligula sit amet ex. Vivamus feugiat est mi, id vestibulum augue',
-  },
-  {
-    imagePath: '/about-us/about-us-image.png',
-    title: 'We strive to protect nature for future generations.',
-    paragraph:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisseullamcorper enim vel fringilla scelerisque. Morbi fermentum, metuseget aliquet laoreet, dolor arcu congue mauris, eleifend fermentumligula ligula sit amet ex. Vivamus feugiat est mi, id vestibulum augue',
-  },
-  {
-    imagePath: '/about-us/about-us-image.png',
-    title: 'We strive to protect nature for future generations.',
-    paragraph:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisseullamcorper enim vel fringilla scelerisque. Morbi fermentum, metuseget aliquet laoreet, dolor arcu congue mauris, eleifend fermentumligula ligula sit amet ex. Vivamus feugiat est mi, id vestibulum augue',
-  },
-];
+import { motion } from 'framer-motion';
 
 function OurProducts() {
   const { t } = useTranslation();
@@ -56,7 +36,12 @@ function OurProducts() {
   ];
 
   return (
-    <div>
+    <motion.div
+      initial={{ y: 50, opacity: 0 }}
+      transition={{ duration: 1 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+    >
       <div className="flex w-full mb-20 flex-col justify-center text-center ">
         <div className="flex w-full justify-center">
           <ParagraphHeader>{TITLE}</ParagraphHeader>
@@ -69,17 +54,24 @@ function OurProducts() {
         {ProductsArray.map(({ imagePath, title, paragraph }, index) => {
           const directionReverse = Boolean(index % 2);
           return (
-            <ProductSection
+            <motion.div
               key={index}
-              title={title}
-              paragraph={paragraph}
-              imagePath={imagePath}
-              reverse={directionReverse}
-            />
+              initial={{ y: 50, opacity: 0 }}
+              transition={{ duration: 1 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+            >
+              <ProductSection
+                title={title}
+                paragraph={paragraph}
+                imagePath={imagePath}
+                reverse={directionReverse}
+              />
+            </motion.div>
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

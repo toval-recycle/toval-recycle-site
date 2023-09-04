@@ -2,9 +2,17 @@ import React from 'react';
 import ParagraphHeader from '../../components/ParagraphHeader';
 import AboutCard from './AboutCard';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
+import { useMediaQuery } from 'react-responsive';
+import { siteBreakPoints } from '../../utils/projectData';
 
 function AboutCards() {
   const { t } = useTranslation();
+  const isXlScreen = useMediaQuery({
+    minWidth: siteBreakPoints.xl,
+  });
+  const isSmScreen = useMediaQuery({ minWidth: siteBreakPoints.sm });
+
   const AboutCardsData = [
     {
       iconPath: {
@@ -43,7 +51,13 @@ function AboutCards() {
   const SUBTITLE = t('aboutUs.subTitle');
 
   return (
-    <div className="flex flex-col items-center justify-center gap-10">
+    <motion.div
+      initial={{ y: 50, opacity: 0 }}
+      transition={{ duration: 1 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      className="flex flex-col items-center justify-center gap-10"
+    >
       <div className="flex max-w-xl flex-col justify-center text-center ">
         <div className="flex w-full justify-center">
           <ParagraphHeader>{TITLE}</ParagraphHeader>
@@ -54,17 +68,32 @@ function AboutCards() {
       </div>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {AboutCardsData.map(({ title, paragraph, iconPath }, index) => {
+          let animationDelay = 0;
+          if (isXlScreen) {
+            animationDelay = index / 4;
+          } else if (isSmScreen) {
+            animationDelay = (index % 2) / 6;
+          }
+
           return (
-            <AboutCard
+            <motion.div
               key={index}
-              title={title}
-              paragraph={paragraph}
-              iconPath={iconPath}
-            />
+              className="flex"
+              initial={{ y: 50, opacity: 0 }}
+              transition={{ duration: 1.2, delay: animationDelay }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+            >
+              <AboutCard
+                title={title}
+                paragraph={paragraph}
+                iconPath={iconPath}
+              />
+            </motion.div>
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

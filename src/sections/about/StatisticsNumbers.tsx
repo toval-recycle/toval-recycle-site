@@ -1,6 +1,7 @@
 import React from 'react';
 import CountUp from 'react-countup';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 
 function StatisticsNumbers() {
   const { t } = useTranslation();
@@ -42,7 +43,13 @@ function StatisticsNumbers() {
   ];
 
   return (
-    <div className="flex flex-wrap flex-col items-center gap-10 px-8 sm:flex-row w-full justify-around text-xl text-third">
+    <motion.div
+      initial={{ y: 50, opacity: 0 }}
+      transition={{ duration: 1 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      className="flex flex-wrap flex-col items-center gap-10 px-8 sm:flex-row w-full justify-around text-xl text-third"
+    >
       {statisticsNumbersData.map(({ icon, number, title, suffix }, index) => (
         <div
           className="relative w-52 md:w-auto flex flex-col gap-5"
@@ -69,7 +76,7 @@ function StatisticsNumbers() {
           </h1>
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 }
 

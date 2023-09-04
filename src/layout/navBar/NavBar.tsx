@@ -1,6 +1,6 @@
 import { useMediaQuery } from 'react-responsive';
 import { cn } from '../../utils/cn';
-import { sectionsID, siteOffset } from '../../utils/projectData';
+import { sectionsID, siteBreakPoints, siteOffset } from '../../utils/projectData';
 import DrawerMenu from './Drawer';
 import ScrollLink from '../../components/ScrollLink';
 import useApplyLinkStyle from './hooks/useApplyLinkStyle';
@@ -13,7 +13,7 @@ function NavBar() {
   const { t } = useTranslation();
   const [navBarStyle] = useApplyNavBarStyle();
   const [activeSection] = useApplyLinkStyle({ offset: siteOffset() });
-  const isMobile = useMediaQuery({ maxWidth: 640 });
+  const isMobile = useMediaQuery({ maxWidth: siteBreakPoints.sm });
   const sectionsData = [
     { nameToDisplay: t('navBar.home'), sectionId: sectionsID.home },
     { nameToDisplay: t('navBar.aboutUs'), sectionId: sectionsID.aboutUs },

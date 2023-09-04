@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import ParagraphHeader from '../../components/ParagraphHeader';
 import InfinitySwiper from '../../components/swiper/InfinitySwiper';
-
+import { motion } from 'framer-motion';
 const clientLogoSrc = [
   './customers/agan.png',
   './customers/ale.png',
@@ -33,10 +33,16 @@ function Clients() {
   ));
 
   return (
-    <div className="text-4xl flex flex-col gap-10">
+    <motion.div
+      initial={{ y: 50, opacity: 0 }}
+      transition={{ duration: 1 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      className="text-4xl flex flex-col gap-10"
+    >
       <ParagraphHeader>{TITLE}</ParagraphHeader>
       <InfinitySwiper data={clientsLogoData} className="h-20 md:h-24 lg:h-32" />
-    </div>
+    </motion.div>
   );
 }
 

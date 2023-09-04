@@ -1,5 +1,5 @@
 import MediaSwiper from '../../components/swiper/MediaSwiper';
-import Modal from '../../components/Modal';
+import { motion } from 'framer-motion';
 import ParagraphHeader from '../../components/ParagraphHeader';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
@@ -24,7 +24,13 @@ function WhatWeDo() {
   const PARAGRAPH = t('whatWeDo.subTitle');
 
   return (
-    <div className="flex w-full flex-col gap-6">
+    <motion.div
+      initial={{ y: 50, opacity: 0 }}
+      transition={{ duration: 1 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      className="flex w-full flex-col gap-6"
+    >
       <div className="flex flex-col gap-3">
         <div className="flex justify-center lg:justify-start">
           <ParagraphHeader>{TITLE}</ParagraphHeader>
@@ -36,7 +42,7 @@ function WhatWeDo() {
       <div className="h-full">
         <MediaSwiper data={mediaData} />
       </div>
-    </div>
+    </motion.div>
   );
 }
 
