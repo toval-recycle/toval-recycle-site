@@ -26,6 +26,7 @@ function LanguageButton() {
 
       return (
         <img
+          alt="language icon"
           key={key}
           src={languageFlags[key as LanguageKeys]}
           className="w-7 rounded-full cursor-pointer hover:scale-110 transition-all"
@@ -37,6 +38,7 @@ function LanguageButton() {
   return (
     <div className="relative">
       <img
+        alt="language icon"
         src={languageFlags[language]}
         className="w-7 rounded-full cursor-pointer"
         onClick={handleClick}

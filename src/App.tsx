@@ -1,7 +1,6 @@
 import React from 'react';
 import Home from './pages-components/homePage/Home';
 import NavBar from './components/navBar/NavBar';
-import { BrowserRouter as Router } from 'react-router-dom';
 import WhatWeDo from './pages-components/what-we-do/WhatWeDo';
 import Contact from './pages-components/contact-us/ContactUs';
 import Cards from './pages-components/about/AboutCards';
@@ -17,7 +16,7 @@ function App() {
   const [direction] = useChangeAppLanguage();
 
   return (
-    <Router>
+    <div>
       <div dir={direction} className="overflow-auto">
         <NavBar />
         <section className="flex min-h-[100dvh] flex-col" id={home}>
@@ -44,7 +43,7 @@ function App() {
           <Footer />
         </section>
       </div>
-    </Router>
+    </div>
   );
 }
 

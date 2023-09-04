@@ -7,10 +7,9 @@ import './MediaSwiper.css';
 import { Grid, Navigation, Pagination, SwiperOptions } from 'swiper';
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-import { FaRegCirclePlay } from 'react-icons/fa6';
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import Modal from '../Modal';
-import { cn } from '../Button';
+import { cn } from '../../utils/cn';
 
 interface ImageSwiperProps extends SwiperOptions {
   className?: string;
@@ -95,12 +94,13 @@ export default function ImageSwiper({
                   onClick={() => handleModalOpen(src, isVideo)}
                 >
                   <video src={src} />
-                  <div className="cursor-pointer absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-7xl rounded-full">
-                    <FaRegCirclePlay />
+                  <div className="cursor-pointer text-7xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white rounded-full">
+                    <PlayCircleOutlineIcon fontSize="inherit" />
                   </div>
                 </div>
               ) : (
                 <img
+                  alt="image"
                   src={src}
                   loading="lazy"
                   onClick={() => handleModalOpen(src, isVideo)}

@@ -1,10 +1,8 @@
 import React from 'react';
 import Button from '../../components/Button';
-import {
-  PiRecycleLight,
-  PiTreeEvergreenLight,
-  PiHandshake,
-} from 'react-icons/pi';
+import HandshakeIcon from '@mui/icons-material/Handshake';
+import ForestOutlinedIcon from '@mui/icons-material/ForestOutlined';
+import RecyclingIcon from '@mui/icons-material/Recycling';
 import { sectionsID } from '../../utils/projectData';
 import ScrollLink from '../../components/ScrollLink';
 import { Trans, useTranslation } from 'react-i18next';
@@ -17,17 +15,17 @@ function Home() {
   const { t } = useTranslation();
   const homeFooter = [
     {
-      icons: <PiTreeEvergreenLight />,
+      icons: <ForestOutlinedIcon fontSize="inherit" />,
       title: t('home.footer.quote_1.title'),
       paragraph: t('home.footer.quote_1.paragraph'),
     },
     {
-      icons: <PiRecycleLight />,
+      icons: <RecyclingIcon fontSize="inherit" />,
       title: t('home.footer.quote_2.title'),
       paragraph: t('home.footer.quote_2.paragraph'),
     },
     {
-      icons: <PiHandshake />,
+      icons: <HandshakeIcon fontSize="inherit" />,
       title: t('home.footer.quote_3.title'),
       paragraph: t('home.footer.quote_3.paragraph'),
     },

@@ -3,7 +3,8 @@ import { Swiper as SwiperComp, SwiperSlide } from 'swiper/react';
 import { SwiperOptions } from 'swiper/types';
 import 'swiper/css';
 import './InfinitySwiper.css';
-import { cn } from '../Button';
+import { cn } from '../../utils/cn';
+
 
 interface SwiperProps extends SwiperOptions {
   className?: string;

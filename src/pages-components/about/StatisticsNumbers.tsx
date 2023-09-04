@@ -6,18 +6,36 @@ function StatisticsNumbers() {
   const { t } = useTranslation();
   const statisticsNumbersData = [
     {
-      icon: <img className="h-full" src="/statistics/number-icons-1.svg" />,
+      icon: (
+        <img
+          className="h-full"
+          src="/statistics/number-icons-1.svg"
+          alt="decoration"
+        />
+      ),
       number: t('aboutUs.statistics.quote_1.number'),
       title: t('aboutUs.statistics.quote_1.title'),
     },
     {
-      icon: <img className="h-full" src="/statistics/number-icons-2.svg" />,
+      icon: (
+        <img
+          className="h-full"
+          src="/statistics/number-icons-2.svg"
+          alt="decoration"
+        />
+      ),
       number: t('aboutUs.statistics.quote_2.number'),
       suffix: t('aboutUs.statistics.quote_2.suffix'),
       title: t('aboutUs.statistics.quote_2.title'),
     },
     {
-      icon: <img className="h-full" src="/statistics/number-icons-3.svg" />,
+      icon: (
+        <img
+          className="h-full"
+          src="/statistics/number-icons-3.svg"
+          alt="decoration"
+        />
+      ),
       number: t('aboutUs.statistics.quote_3.number'),
       title: t('aboutUs.statistics.quote_3.title'),
     },

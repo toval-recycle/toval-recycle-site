@@ -1,7 +1,6 @@
 import { VariantProps, cva } from 'class-variance-authority';
 import React, { forwardRef, Ref } from 'react';
-import { twMerge } from 'tailwind-merge';
-import { ClassValue, clsx } from 'clsx';
+import { cn } from '../utils/cn';
 
 const buttonVariants = cva(
   'px-10 py-3 rounded-full font-semibold flex items-center gap-2',
@@ -17,9 +16,6 @@ const buttonVariants = cva(
     },
   }
 );
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,

@@ -35,7 +35,7 @@ function Footer() {
             <p>{RIGHTS}</p>
           </div>
           <div>
-            <img src="/logo-white.svg" />
+            <img src="/logo-white.svg" alt="logo" />
           </div>
         </div>
       </div>

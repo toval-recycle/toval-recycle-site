@@ -3,82 +3,35 @@ import { useTranslation } from 'react-i18next';
 import ParagraphHeader from '../../components/ParagraphHeader';
 import InfinitySwiper from '../../components/swiper/InfinitySwiper';
 
-const clientsLogoData = [
-  <img
-    src="./customers/agan.png"
-    loading="lazy"
-    className="aspect-video object-contain"
-  />,
-  <img
-    src="./customers/ale.png"
-    loading="lazy"
-    className="aspect-video object-contain"
-  />,
-  <img
-    src="./customers/avgol.png"
-    loading="lazy"
-    className="aspect-video object-contain"
-  />,
-  <img
-    src="./customers/clalit.png"
-    loading="lazy"
-    className="aspect-video object-contain"
-  />,
-  <img
-    src="./customers/DF_omer.png"
-    loading="lazy"
-    className="aspect-video object-contain"
-  />,
-  <img
-    src="./customers/dolav.png"
-    loading="lazy"
-    className="aspect-video object-contain"
-  />,
-  <img
-    src="./customers/engel.png"
-    loading="lazy"
-    className="aspect-video object-contain"
-  />,
-  <img
-    src="./customers/hen.png"
-    loading="lazy"
-    className="aspect-video object-contain"
-  />,
-  <img
-    src="./customers/intel.png"
-    loading="lazy"
-    className="aspect-video object-contain"
-  />,
-  <img
-    src="./customers/kafrit.png"
-    loading="lazy"
-    className="aspect-video object-contain"
-  />,
-  <img
-    src="./customers/log.png"
-    loading="lazy"
-    className="aspect-video object-contain"
-  />,
-  <img
-    src="./customers/teva.png"
-    loading="lazy"
-    className="aspect-video object-contain"
-  />,
-  <img
-    src="./customers/yafora.png"
-    loading="lazy"
-    className="aspect-video object-contain"
-  />,
-  <img
-    src="./customers/yotvata.png"
-    loading="lazy"
-    className="aspect-video object-contain"
-  />,
+const clientLogoSrc = [
+  './customers/agan.png',
+  './customers/ale.png',
+  './customers/avgol.png',
+  './customers/clalit.png',
+  './customers/DF_omer.png',
+  './customers/dolav.png',
+  './customers/engel.png',
+  './customers/hen.png',
+  './customers/intel.png',
+  './customers/kafrit.png',
+  './customers/log.png',
+  './customers/teva.png',
+  './customers/yafora.png',
+  './customers/yotvata.png',
 ];
 
 function Clients() {
   const { t } = useTranslation();
   const TITLE = t('whatWeDo.client.title');
+  const clientsLogoData = clientLogoSrc.map((src) => (
+    <img
+      src={src}
+      loading="lazy"
+      className="aspect-video object-contain"
+      alt="logo"
+    />
+  ));
+
   return (
     <div className="text-4xl flex flex-col gap-10">
       <ParagraphHeader>{TITLE}</ParagraphHeader>

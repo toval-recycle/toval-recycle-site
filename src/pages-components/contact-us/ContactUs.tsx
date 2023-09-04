@@ -1,10 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Button from '../../components/Button';
-
-import { IoLocationSharp } from 'react-icons/io5';
-import { IoMdMail } from 'react-icons/io';
-import { ImPhone } from 'react-icons/im';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import MailSharpIcon from '@mui/icons-material/MailSharp';
 import ParagraphHeader from '../../components/ParagraphHeader';
 import { useFormik } from 'formik';
 import { useTranslation } from 'react-i18next';
@@ -20,12 +19,15 @@ function ContactUs() {
   const CONTACT_BUTTON = t('contactUs.contact.button');
   const contactInfo = [
     {
-      icon: <IoLocationSharp />,
+      icon: <LocationOnIcon fontSize="inherit" />,
       title: t('contactUs.contact.info.location'),
     },
-    { icon: <ImPhone />, title: t('contactUs.contact.info.phone') },
     {
-      icon: <IoMdMail />,
+      icon: <LocalPhoneIcon fontSize="inherit" />,
+      title: t('contactUs.contact.info.phone'),
+    },
+    {
+      icon: <MailSharpIcon fontSize="inherit" />,
       title: t('contactUs.contact.info.email'),
     },
   ];
@@ -147,7 +149,7 @@ function ContactUs() {
           <div className="flex flex-col gap-4">
             {contactInfo.map(({ icon, title }, index) => (
               <div className="flex gap-2 md:gap-5 items-center" key={index}>
-                <div className="border-[1px] rounded-full p-2 text-base md:text-2xl text-main">
+                <div className="flex border-[1px] rounded-full p-2 text-base md:text-2xl text-main">
                   {icon}
                 </div>
                 <h1 className="text-sm sm:text-xl md:text-2xl text-gray-700">
