@@ -30,7 +30,10 @@ function App() {
           <section className="w-full">
             <StatisticsNumbers />
           </section>
-          <section id={whatWeAreDoing} className="max-w-site flex flex-col ">
+          <section
+            id={whatWeAreDoing}
+            className="max-w-site flex w-full flex-col"
+          >
             <WhatWeDo />
           </section>
           <section className="max-w-site w-full">
