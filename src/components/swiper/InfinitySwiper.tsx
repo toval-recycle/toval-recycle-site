@@ -1,16 +1,15 @@
-import { Autoplay } from 'swiper';
-import { Swiper as SwiperComp, SwiperSlide } from 'swiper/react';
-import { SwiperOptions } from 'swiper/types';
-import 'swiper/css';
-import './InfinitySwiper.css';
-import { cn } from '../../utils/cn';
-
+import { Autoplay } from "swiper";
+import { Swiper as SwiperComp, SwiperSlide } from "swiper/react";
+import { SwiperOptions } from "swiper/types";
+import "swiper/css";
+import "./InfinitySwiper.css";
+import { cn } from "../../utils/cn";
 
 interface SwiperProps extends SwiperOptions {
   className?: string;
   data: any[];
 }
-const SlidePerView = 5;
+const SlidePerView = 8;
 
 function duplicateArrayUntilLength(array: any[], desiredLength: number) {
   const newArray = [...array];
@@ -23,7 +22,7 @@ function duplicateArrayUntilLength(array: any[], desiredLength: number) {
 }
 
 export default function InfinitySwiper({
-  className = '',
+  className = "",
   data = [],
 }: SwiperProps) {
   const arrayToDisplay = duplicateArrayUntilLength(data, SlidePerView);
@@ -40,6 +39,9 @@ export default function InfinitySwiper({
           slidesPerView: 4,
         },
         1536: {
+          slidesPerView: 5,
+        },
+        2500: {
           slidesPerView: SlidePerView,
         },
       }}
@@ -56,7 +58,7 @@ export default function InfinitySwiper({
       speed={3000}
       modules={[Autoplay]}
       watchSlidesProgress={true}
-      className={cn('infinity-swiper', className)}
+      className={cn("infinity-swiper", className)}
     >
       {arrayToDisplay.map((element, index) => (
         <SwiperSlide key={index}>
